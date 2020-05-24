@@ -27,18 +27,23 @@ class _ResultState extends State<Result> {
         backgroundColor: Colors.indigo,
       ),
       drawer: DrawerUI(),
-      body: Center(
-        child: Container(
-          color: Colors.blue[50],
-          width: double.infinity,
-          height: 150,
-          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-          margin: const EdgeInsets.all(10.0),
-          child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Text(
+      body: @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Prediction"),
+        backgroundColor: Colors.indigo,
+      ),
+      drawer: DrawerUI(),
+      body:
+        ListView(
+        children: <Widget>[
+          new Card(
+                child: new Container(
+                  padding: new EdgeInsets.all(32.0),
+                  child: new Column(
+                    children: <Widget>[
+                      Text(
                   "Expected flood height ",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
@@ -46,7 +51,7 @@ class _ResultState extends State<Result> {
                   ),
                 ),
                 Text(
-                  "within the next 24 hours is",
+                  "12:00 a.m",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 18,
@@ -71,9 +76,979 @@ class _ResultState extends State<Result> {
                   textAlign: TextAlign.center,
                   style: TextStyle(),
                 )
-              ]),
-        ),
+                    ],
+                  ),
+                ),
+              ),
+          new Card(
+                child: new Container(
+                  padding: new EdgeInsets.all(32.0),
+                  child: new Column(
+                    children: <Widget>[
+                      Text(
+                  "Expected flood height ",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                Text(
+                  "01:00 a.m",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  this.height,
+                  style: TextStyle(
+                    color: Colors.indigo,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  this.warningMessage,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(),
+                )
+                    ],
+                  ),
+                ),
+              ),
+          new Card(
+                child: new Container(
+                  padding: new EdgeInsets.all(32.0),
+                  child: new Column(
+                    children: <Widget>[
+                      Text(
+                  "Expected flood height ",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                Text(
+                  "02:00 a.m",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  this.height,
+                  style: TextStyle(
+                    color: Colors.indigo,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  this.warningMessage,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(),
+                )
+                    ],
+                  ),
+                ),
+              ),
+          new Card(
+                child: new Container(
+                  padding: new EdgeInsets.all(32.0),
+                  child: new Column(
+                    children: <Widget>[
+                      Text(
+                  "Expected flood height ",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                Text(
+                  "03:00 a.m",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  this.height,
+                  style: TextStyle(
+                    color: Colors.indigo,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  this.warningMessage,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(),
+                )
+                    ],
+                  ),
+                ),
+              ),
+          new Card(
+                child: new Container(
+                  padding: new EdgeInsets.all(32.0),
+                  child: new Column(
+                    children: <Widget>[
+                      Text(
+                  "Expected flood height ",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                Text(
+                  "04:00 a.m",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  this.height,
+                  style: TextStyle(
+                    color: Colors.indigo,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  this.warningMessage,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(),
+                )
+                    ],
+                  ),
+                ),
+              ),
+          new Card(
+                child: new Container(
+                  padding: new EdgeInsets.all(32.0),
+                  child: new Column(
+                    children: <Widget>[
+                      Text(
+                  "Expected flood height ",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                Text(
+                  "05:00 a.m",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  this.height,
+                  style: TextStyle(
+                    color: Colors.indigo,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  this.warningMessage,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(),
+                )
+                    ],
+                  ),
+                ),
+              ),
+          new Card(
+                child: new Container(
+                  padding: new EdgeInsets.all(32.0),
+                  child: new Column(
+                    children: <Widget>[
+                      Text(
+                  "Expected flood height ",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                Text(
+                  "06:00 a.m",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  this.height,
+                  style: TextStyle(
+                    color: Colors.indigo,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  this.warningMessage,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(),
+                )
+                    ],
+                  ),
+                ),
+              ),
+          new Card(
+                child: new Container(
+                  padding: new EdgeInsets.all(32.0),
+                  child: new Column(
+                    children: <Widget>[
+                      Text(
+                  "Expected flood height ",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                Text(
+                  "07:00 a.m",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  this.height,
+                  style: TextStyle(
+                    color: Colors.indigo,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  this.warningMessage,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(),
+                )
+                    ],
+                  ),
+                ),
+              ),
+              new Card(
+                child: new Container(
+                  padding: new EdgeInsets.all(32.0),
+                  child: new Column(
+                    children: <Widget>[
+                      Text(
+                  "Expected flood height ",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                Text(
+                  "08:00 a.m",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  this.height,
+                  style: TextStyle(
+                    color: Colors.indigo,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  this.warningMessage,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(),
+                )
+                    ],
+                  ),
+                ),
+              ),
+              new Card(
+                child: new Container(
+                  padding: new EdgeInsets.all(32.0),
+                  child: new Column(
+                    children: <Widget>[
+                      Text(
+                  "Expected flood height ",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                Text(
+                  "09:00 a.m",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  this.height,
+                  style: TextStyle(
+                    color: Colors.indigo,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  this.warningMessage,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(),
+                )
+                    ],
+                  ),
+                ),
+              ),
+              new Card(
+                child: new Container(
+                  padding: new EdgeInsets.all(32.0),
+                  child: new Column(
+                    children: <Widget>[
+                      Text(
+                  "Expected flood height ",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                Text(
+                  "10:00 a.m",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  this.height,
+                  style: TextStyle(
+                    color: Colors.indigo,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  this.warningMessage,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(),
+                )
+                    ],
+                  ),
+                ),
+              ),
+              new Card(
+                child: new Container(
+                  padding: new EdgeInsets.all(32.0),
+                  child: new Column(
+                    children: <Widget>[
+                      Text(
+                  "Expected flood height ",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                Text(
+                  "12:00 noon",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  this.height,
+                  style: TextStyle(
+                    color: Colors.indigo,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  this.warningMessage,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(),
+                )
+                    ],
+                  ),
+                ),
+              ),
+              new Card(
+                child: new Container(
+                  padding: new EdgeInsets.all(32.0),
+                  child: new Column(
+                    children: <Widget>[
+                      Text(
+                  "Expected flood height ",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                Text(
+                  "01:00 p.m",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  this.height,
+                  style: TextStyle(
+                    color: Colors.indigo,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  this.warningMessage,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(),
+                )
+                    ],
+                  ),
+                ),
+              ),
+              new Card(
+                child: new Container(
+                  padding: new EdgeInsets.all(32.0),
+                  child: new Column(
+                    children: <Widget>[
+                      Text(
+                  "Expected flood height ",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                Text(
+                  "02:00 p.m",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  this.height,
+                  style: TextStyle(
+                    color: Colors.indigo,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  this.warningMessage,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(),
+                )
+                    ],
+                  ),
+                ),
+              ),
+              new Card(
+                child: new Container(
+                  padding: new EdgeInsets.all(32.0),
+                  child: new Column(
+                    children: <Widget>[
+                      Text(
+                  "Expected flood height ",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                Text(
+                  "03:00 p.m",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  this.height,
+                  style: TextStyle(
+                    color: Colors.indigo,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  this.warningMessage,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(),
+                )
+                    ],
+                  ),
+                ),
+              ),
+              new Card(
+                child: new Container(
+                  padding: new EdgeInsets.all(32.0),
+                  child: new Column(
+                    children: <Widget>[
+                      Text(
+                  "Expected flood height ",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                Text(
+                  "04:00 p.m",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  this.height,
+                  style: TextStyle(
+                    color: Colors.indigo,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  this.warningMessage,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(),
+                )
+                    ],
+                  ),
+                ),
+              ),
+              new Card(
+                child: new Container(
+                  padding: new EdgeInsets.all(32.0),
+                  child: new Column(
+                    children: <Widget>[
+                      Text(
+                  "Expected flood height ",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                Text(
+                  "05:00 p.m",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  this.height,
+                  style: TextStyle(
+                    color: Colors.indigo,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  this.warningMessage,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(),
+                )
+                    ],
+                  ),
+                ),
+              ),
+              new Card(
+                child: new Container(
+                  padding: new EdgeInsets.all(32.0),
+                  child: new Column(
+                    children: <Widget>[
+                      Text(
+                  "Expected flood height ",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                Text(
+                  "06:00 p.m",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  this.height,
+                  style: TextStyle(
+                    color: Colors.indigo,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  this.warningMessage,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(),
+                )
+                    ],
+                  ),
+                ),
+              ),
+              new Card(
+                child: new Container(
+                  padding: new EdgeInsets.all(32.0),
+                  child: new Column(
+                    children: <Widget>[
+                      Text(
+                  "Expected flood height ",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                Text(
+                  "07:00 p.m",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  this.height,
+                  style: TextStyle(
+                    color: Colors.indigo,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  this.warningMessage,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(),
+                )
+                    ],
+                  ),
+                ),
+              ),
+              new Card(
+                child: new Container(
+                  padding: new EdgeInsets.all(32.0),
+                  child: new Column(
+                    children: <Widget>[
+                      Text(
+                  "Expected flood height ",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                Text(
+                  "08:00 p.m",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  this.height,
+                  style: TextStyle(
+                    color: Colors.indigo,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  this.warningMessage,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(),
+                )
+                    ],
+                  ),
+                ),
+              ),
+              new Card(
+                child: new Container(
+                  padding: new EdgeInsets.all(32.0),
+                  child: new Column(
+                    children: <Widget>[
+                      Text(
+                  "Expected flood height ",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                Text(
+                  "09:00 p.m",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  this.height,
+                  style: TextStyle(
+                    color: Colors.indigo,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  this.warningMessage,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(),
+                )
+                    ],
+                  ),
+                ),
+              ),
+              new Card(
+                child: new Container(
+                  padding: new EdgeInsets.all(32.0),
+                  child: new Column(
+                    children: <Widget>[
+                      Text(
+                  "Expected flood height ",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                Text(
+                  "10:00 p.m",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  this.height,
+                  style: TextStyle(
+                    color: Colors.indigo,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  this.warningMessage,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(),
+                )
+                    ],
+                  ),
+                ),
+              ),
+              new Card(
+                child: new Container(
+                  padding: new EdgeInsets.all(32.0),
+                  child: new Column(
+                    children: <Widget>[
+                      Text(
+                  "Expected flood height ",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                Text(
+                  "11:00 p.m",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  this.height,
+                  style: TextStyle(
+                    color: Colors.indigo,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  this.warningMessage,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(),
+                )
+                    ],
+                  ),
+                ),
+              ),
+              new Card(
+                child: new Container(
+                  padding: new EdgeInsets.all(32.0),
+                  child: new Column(
+                    children: <Widget>[
+                      Text(
+                  "Expected flood height ",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                Text(
+                  "12:00 midnight",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  this.height,
+                  style: TextStyle(
+                    color: Colors.indigo,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  this.warningMessage,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(),
+                )
+                    ],
+                  ),
+                ),
+              ),
+        ],
       ),
+      
       floatingActionButton: FloatingActionButton(
           child: Icon(
             Icons.home,
@@ -87,6 +1062,9 @@ class _ResultState extends State<Result> {
           }),
     );
   }
+}
+
+      
 
   void fetchPrediction() async {
     debugPrint("hello");
