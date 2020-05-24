@@ -7,7 +7,7 @@
         android:label="Flood Alert"
         android:icon="@mipmap/ic_launcher">
         <meta-data android:name="com.google.android.geo.API_KEY"
-               android:value="API_KEY_HERE"/>        
+               android:value="AIzaSyDnd6vpoAs8bpnAWK1XegaGaSEryjE_Dus"/>        
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
