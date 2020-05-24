@@ -4,10 +4,10 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="test_map"
+        android:label="Flood Alert"
         android:icon="@mipmap/ic_launcher">
         <meta-data android:name="com.google.android.geo.API_KEY"
-               android:value="key"/>        
+               android:value="API_KEY_HERE"/>        
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
