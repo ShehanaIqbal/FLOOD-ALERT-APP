@@ -24,7 +24,7 @@ class _ResultState extends State<Result> {
         backgroundColor: Colors.indigo,
       ),
       drawer: DrawerUI(),
-      body: Center(
+      body:
         ListView(
         children: <Widget>[
           ListTile(
@@ -38,7 +38,7 @@ class _ResultState extends State<Result> {
           ),
         ],
       ),
-      ),
+      
       floatingActionButton: FloatingActionButton(
           child: Icon(
             Icons.home,
