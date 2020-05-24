@@ -24,21 +24,53 @@ class _ResultState extends State<Result> {
         backgroundColor: Colors.indigo,
       ),
       drawer: DrawerUI(),
-      body:
-        ListView(
-        children: <Widget>[
-          ListTile(
-            title: Text('Sun'),
-          ),
-          ListTile(
-            title: Text('Moon'),
-          ),
-          ListTile(
-            title: Text('Star'),
-          ),
-        ],
+      body: Center(
+        child: Container(
+          color: Colors.blue[50],
+          width: double.infinity,
+          height: 150,
+          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          margin: const EdgeInsets.all(10.0),
+          child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text(
+                  "Expected flood height ",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                Text(
+                  "within the next 24 hours is",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  this.height,
+                  style: TextStyle(
+                    color: Colors.indigo,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  this.warningMessage,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(),
+                )
+              ]),
+        ),
       ),
-      
       floatingActionButton: FloatingActionButton(
           child: Icon(
             Icons.home,
