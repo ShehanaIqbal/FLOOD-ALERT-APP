@@ -1,6 +1,8 @@
 import 'package:flood_alert_app/pages/homeScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flood_alert_app/widgets/drawer.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 class Result extends StatefulWidget {
   final double longitude;
@@ -18,6 +20,7 @@ class _ResultState extends State<Result> {
 
   @override
   Widget build(BuildContext context) {
+    this.fetchPrediction();
     return Scaffold(
       appBar: AppBar(
         title: Text("Prediction"),
@@ -83,5 +86,18 @@ class _ResultState extends State<Result> {
             );
           }),
     );
+  }
+
+  void fetchPrediction() async {
+    debugPrint("hello");
+    String url =
+        'http://ec2-100-25-180-74.compute-1.amazonaws.com:3000/api/prediction/' +
+            widget.latitude.toString() +
+            '&' +
+            widget.longitude.toString();
+    final response = await http.get(url);
+    Map<String, dynamic> prediction = json.decode(response.body);
+
+    debugPrint(prediction.toString());
   }
 }
