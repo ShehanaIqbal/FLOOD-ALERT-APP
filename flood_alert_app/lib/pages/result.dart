@@ -1,8 +1,8 @@
 import 'package:flood_alert_app/pages/homeScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flood_alert_app/widgets/drawer.dart';
-import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:http/http.dart' as http;
 
 class Result extends StatefulWidget {
   final double longitude;
@@ -19,15 +19,6 @@ class _ResultState extends State<Result> {
   String warningMessage = "Custom Warning Message";
 
   @override
-  Widget build(BuildContext context) {
-    this.fetchPrediction();
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Prediction"),
-        backgroundColor: Colors.indigo,
-      ),
-      drawer: DrawerUI(),
-      body: @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
