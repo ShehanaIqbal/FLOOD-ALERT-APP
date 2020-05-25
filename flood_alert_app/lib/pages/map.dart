@@ -76,7 +76,8 @@ class _MyAppState extends State<Map> {
                           context,
                           MaterialPageRoute(
                               builder: (context) => Result(
-                                  longitude: longitude, latitude: latitude)),
+                                  longitude: longitude, latitude: latitude)
+                                ),
                         );
                         // print(result);
                       },

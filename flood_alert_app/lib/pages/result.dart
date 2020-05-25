@@ -7,15 +7,37 @@ import 'package:http/http.dart' as http;
 class Result extends StatefulWidget {
   final double longitude;
   final double latitude;
-
   const Result({@required this.longitude, @required this.latitude});
+  
 
+  
+  Future<String> fetchPrediction() async {
+    print("hello");
+    String url =
+        'http://ec2-100-25-180-74.compute-1.amazonaws.com:3000/api/prediction/' +
+            this.getLatitude()+
+            '&' +
+            this.getLongitude();
+    final response = await http.get(url);
+    Map<String, dynamic> prediction = json.decode(response.body);
+    pre=prediction.toString();
+    return ;
+  }
   @override
   _ResultState createState() => _ResultState();
+
+  String getLongitude(){
+    return (longitude.toString());
+  }
+
+  String getLatitude(){
+    return (latitude.toString());
+  }
+
 }
 
 class _ResultState extends State<Result> {
-  String height = "Height";
+  final String height=_Result.fetchPrediction();
   String warningMessage = "Custom Warning Message";
 
   @override
@@ -1056,17 +1078,3 @@ class _ResultState extends State<Result> {
 }
 
       
-
-  void fetchPrediction() async {
-    debugPrint("hello");
-    String url =
-        'http://ec2-100-25-180-74.compute-1.amazonaws.com:3000/api/prediction/' +
-            widget.latitude.toString() +
-            '&' +
-            widget.longitude.toString();
-    final response = await http.get(url);
-    Map<String, dynamic> prediction = json.decode(response.body);
-
-    debugPrint(prediction.toString());
-  }
-}
