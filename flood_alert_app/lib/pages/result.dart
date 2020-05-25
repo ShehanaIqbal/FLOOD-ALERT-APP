@@ -8,23 +8,16 @@ class Result extends StatefulWidget {
   final double longitude;
   final double latitude;
   const Result({@required this.longitude, @required this.latitude});
-  
 
-  
-  Future<String> fetchPrediction() async {
-    print("hello");
-    String url =
-        'http://ec2-100-25-180-74.compute-1.amazonaws.com:3000/api/prediction/' +
-            this.getLatitude()+
-            '&' +
-            this.getLongitude();
-    final response = await http.get(url);
-    Map<String, dynamic> prediction = json.decode(response.body);
-    pre=prediction.toString();
-    return ;
-  }
+
   @override
-  _ResultState createState() => _ResultState();
+  _ResultState createState() => _ResultState(this.latitude,this.longitude);
+}
+
+class _ResultState extends State<Result> {
+  final double longitude;
+  final double latitude;
+  _ResultState(this.latitude,this.longitude);
 
   String getLongitude(){
     return (longitude.toString());
@@ -34,22 +27,17 @@ class Result extends StatefulWidget {
     return (latitude.toString());
   }
 
-}
-
-class _ResultState extends State<Result> {
-  final String height=_Result.fetchPrediction();
-  String warningMessage = "Custom Warning Message";
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Prediction"),
-        backgroundColor: Colors.indigo,
-      ),
-      drawer: DrawerUI(),
-      body:
-        ListView(
+  Future<Widget> fetchPrediction() async {
+    print("hello");
+    String url =
+        'http://ec2-100-25-180-74.compute-1.amazonaws.com:3000/api/prediction/' +
+            this.getLatitude()+
+            '&' +
+            this.getLongitude();
+    final response = await http.get(url);
+    Map<String, dynamic> prediction = json.decode(response.body);
+    final String height=prediction.toString();
+    return ListView(
         children: <Widget>[
           new Card(
                 child: new Container(
@@ -74,7 +62,7 @@ class _ResultState extends State<Result> {
                   height: 5,
                 ),
                 Text(
-                  this.height,
+                  height,
                   style: TextStyle(
                     color: Colors.indigo,
                     fontWeight: FontWeight.bold,
@@ -116,7 +104,7 @@ class _ResultState extends State<Result> {
                   height: 5,
                 ),
                 Text(
-                  this.height,
+                 height,
                   style: TextStyle(
                     color: Colors.indigo,
                     fontWeight: FontWeight.bold,
@@ -158,7 +146,7 @@ class _ResultState extends State<Result> {
                   height: 5,
                 ),
                 Text(
-                  this.height,
+                  height,
                   style: TextStyle(
                     color: Colors.indigo,
                     fontWeight: FontWeight.bold,
@@ -200,7 +188,7 @@ class _ResultState extends State<Result> {
                   height: 5,
                 ),
                 Text(
-                  this.height,
+                  height,
                   style: TextStyle(
                     color: Colors.indigo,
                     fontWeight: FontWeight.bold,
@@ -242,7 +230,7 @@ class _ResultState extends State<Result> {
                   height: 5,
                 ),
                 Text(
-                  this.height,
+                  height,
                   style: TextStyle(
                     color: Colors.indigo,
                     fontWeight: FontWeight.bold,
@@ -284,7 +272,7 @@ class _ResultState extends State<Result> {
                   height: 5,
                 ),
                 Text(
-                  this.height,
+                  height,
                   style: TextStyle(
                     color: Colors.indigo,
                     fontWeight: FontWeight.bold,
@@ -326,7 +314,7 @@ class _ResultState extends State<Result> {
                   height: 5,
                 ),
                 Text(
-                  this.height,
+                  height,
                   style: TextStyle(
                     color: Colors.indigo,
                     fontWeight: FontWeight.bold,
@@ -368,7 +356,7 @@ class _ResultState extends State<Result> {
                   height: 5,
                 ),
                 Text(
-                  this.height,
+                  height,
                   style: TextStyle(
                     color: Colors.indigo,
                     fontWeight: FontWeight.bold,
@@ -410,7 +398,7 @@ class _ResultState extends State<Result> {
                   height: 5,
                 ),
                 Text(
-                  this.height,
+                  height,
                   style: TextStyle(
                     color: Colors.indigo,
                     fontWeight: FontWeight.bold,
@@ -452,7 +440,7 @@ class _ResultState extends State<Result> {
                   height: 5,
                 ),
                 Text(
-                  this.height,
+                  height,
                   style: TextStyle(
                     color: Colors.indigo,
                     fontWeight: FontWeight.bold,
@@ -494,7 +482,7 @@ class _ResultState extends State<Result> {
                   height: 5,
                 ),
                 Text(
-                  this.height,
+                  height,
                   style: TextStyle(
                     color: Colors.indigo,
                     fontWeight: FontWeight.bold,
@@ -536,7 +524,7 @@ class _ResultState extends State<Result> {
                   height: 5,
                 ),
                 Text(
-                  this.height,
+                  height,
                   style: TextStyle(
                     color: Colors.indigo,
                     fontWeight: FontWeight.bold,
@@ -578,7 +566,7 @@ class _ResultState extends State<Result> {
                   height: 5,
                 ),
                 Text(
-                  this.height,
+                  height,
                   style: TextStyle(
                     color: Colors.indigo,
                     fontWeight: FontWeight.bold,
@@ -620,7 +608,7 @@ class _ResultState extends State<Result> {
                   height: 5,
                 ),
                 Text(
-                  this.height,
+                  height,
                   style: TextStyle(
                     color: Colors.indigo,
                     fontWeight: FontWeight.bold,
@@ -662,7 +650,7 @@ class _ResultState extends State<Result> {
                   height: 5,
                 ),
                 Text(
-                  this.height,
+                  height,
                   style: TextStyle(
                     color: Colors.indigo,
                     fontWeight: FontWeight.bold,
@@ -704,7 +692,7 @@ class _ResultState extends State<Result> {
                   height: 5,
                 ),
                 Text(
-                  this.height,
+                  height,
                   style: TextStyle(
                     color: Colors.indigo,
                     fontWeight: FontWeight.bold,
@@ -746,7 +734,7 @@ class _ResultState extends State<Result> {
                   height: 5,
                 ),
                 Text(
-                  this.height,
+                  height,
                   style: TextStyle(
                     color: Colors.indigo,
                     fontWeight: FontWeight.bold,
@@ -788,7 +776,7 @@ class _ResultState extends State<Result> {
                   height: 5,
                 ),
                 Text(
-                  this.height,
+                  height,
                   style: TextStyle(
                     color: Colors.indigo,
                     fontWeight: FontWeight.bold,
@@ -830,7 +818,7 @@ class _ResultState extends State<Result> {
                   height: 5,
                 ),
                 Text(
-                  this.height,
+                  height,
                   style: TextStyle(
                     color: Colors.indigo,
                     fontWeight: FontWeight.bold,
@@ -872,7 +860,7 @@ class _ResultState extends State<Result> {
                   height: 5,
                 ),
                 Text(
-                  this.height,
+                  height,
                   style: TextStyle(
                     color: Colors.indigo,
                     fontWeight: FontWeight.bold,
@@ -914,7 +902,7 @@ class _ResultState extends State<Result> {
                   height: 5,
                 ),
                 Text(
-                  this.height,
+                  height,
                   style: TextStyle(
                     color: Colors.indigo,
                     fontWeight: FontWeight.bold,
@@ -956,7 +944,7 @@ class _ResultState extends State<Result> {
                   height: 5,
                 ),
                 Text(
-                  this.height,
+                  height,
                   style: TextStyle(
                     color: Colors.indigo,
                     fontWeight: FontWeight.bold,
@@ -998,7 +986,7 @@ class _ResultState extends State<Result> {
                   height: 5,
                 ),
                 Text(
-                  this.height,
+                  height,
                   style: TextStyle(
                     color: Colors.indigo,
                     fontWeight: FontWeight.bold,
@@ -1040,7 +1028,7 @@ class _ResultState extends State<Result> {
                   height: 5,
                 ),
                 Text(
-                  this.height,
+                 height,
                   style: TextStyle(
                     color: Colors.indigo,
                     fontWeight: FontWeight.bold,
@@ -1060,21 +1048,22 @@ class _ResultState extends State<Result> {
                 ),
               ),
         ],
-      ),
-      
-      floatingActionButton: FloatingActionButton(
-          child: Icon(
-            Icons.home,
-          ),
-          backgroundColor: Colors.indigo,
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => HomeScreen()),
-            );
-          }),
-    );
+      );
   }
+
+
+  
+  String warningMessage = "Custom Warning Message";
+
+  @override
+Widget build(BuildContext context) {
+  return Scaffold(
+    appBar: AppBar(
+      title: Text('ProjectList'),
+    ),
+    body: fetchPrediction(),
+  );
+}
 }
 
       
