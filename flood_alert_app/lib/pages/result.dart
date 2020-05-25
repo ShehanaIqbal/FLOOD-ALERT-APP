@@ -1,6 +1,4 @@
-import 'package:flood_alert_app/pages/homeScreen.dart';
 import 'package:flutter/material.dart';
-import 'package:flood_alert_app/widgets/drawer.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
@@ -27,7 +25,7 @@ class _ResultState extends State<Result> {
     return (latitude.toString());
   }
 
-  Future<Widget> fetchPrediction() async {
+  Future<String> fetchPrediction() async {
     print("hello");
     String url =
         'http://ec2-100-25-180-74.compute-1.amazonaws.com:3000/api/prediction/' +
@@ -37,7 +35,22 @@ class _ResultState extends State<Result> {
     final response = await http.get(url);
     Map<String, dynamic> prediction = json.decode(response.body);
     final String height=prediction.toString();
-    return ListView(
+    return height;
+  }
+
+
+  
+  String warningMessage = "Custom Warning Message";
+
+  @override
+  Widget build(context) {
+    return FutureBuilder<String>(
+      future: fetchPrediction(),
+      builder: (context, AsyncSnapshot<String> snapshot) {
+        if (snapshot.hasData) {
+          var height=snapshot.data;
+          print(height);
+          return ListView(
         children: <Widget>[
           new Card(
                 child: new Container(
@@ -1049,21 +1062,14 @@ class _ResultState extends State<Result> {
               ),
         ],
       );
+        } else {
+          print (snapshot.data);
+          print ("failed");
+          return CircularProgressIndicator();
+        }
+      }
+    );
   }
-
-
-  
-  String warningMessage = "Custom Warning Message";
-
-  @override
-Widget build(BuildContext context) {
-  return Scaffold(
-    appBar: AppBar(
-      title: Text('ProjectList'),
-    ),
-    body: fetchPrediction(),
-  );
-}
 }
 
       
