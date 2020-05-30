@@ -4,8 +4,6 @@ import 'dart:convert';
 import 'package:toast/toast.dart';
 import 'package:http/http.dart' as http;
 
-import 'homeScreen.dart';
-
 class Result extends StatefulWidget {
   final double longitude;
   final double latitude;
@@ -67,43 +65,42 @@ class _ResultState extends State<Result> {
     }
   }
 
-    Future<List<String>> _startUploading() async{
-      final Map<String, dynamic> prediction = await _uploadLocation();
-      if (prediction==null){
-        Toast.show("Location Upload Failed!!!", context,
-            duration: Toast.LENGTH_LONG, gravity: Toast.BOTTOM);
-      }else if (prediction.containsKey('result')){
-        List<String> height=[];
-        height.add(prediction['result'][0]['1'].toString());
-        height.add(prediction['result'][0]['2'].toString());
-        height.add(prediction['result'][0]['3'].toString());
-        height.add(prediction['result'][0]['4'].toString());
-        height.add(prediction['result'][0]['5'].toString());
-        height.add(prediction['result'][0]['6'].toString());
-        height.add(prediction['result'][0]['7'].toString());
-        height.add(prediction['result'][0]['8'].toString());
-        height.add(prediction['result'][0]['9'].toString());
-        height.add(prediction['result'][0]['10'].toString());
-        height.add(prediction['result'][0]['11'].toString());
-        height.add(prediction['result'][0]['12'].toString());
-        height.add(prediction['result'][0]['13'].toString());
-        height.add(prediction['result'][0]['14'].toString());
-        height.add(prediction['result'][0]['15'].toString());
-        height.add(prediction['result'][0]['16'].toString());
-        height.add(prediction['result'][0]['17'].toString());
-        height.add(prediction['result'][0]['18'].toString());
-        height.add(prediction['result'][0]['19'].toString());
-        height.add(prediction['result'][0]['20'].toString());
-        height.add(prediction['result'][0]['21'].toString());
-        height.add(prediction['result'][0]['22'].toString());
-        height.add(prediction['result'][0]['23'].toString());
-        height.add(prediction['result'][0]['24'].toString());
-        return height;
-      }else{
-        Toast.show("Try again!!!", context,
-            duration: Toast.LENGTH_LONG, gravity: Toast.BOTTOM);
-        return null;
-      }
+  Future<List<String>> _startUploading() async {
+    final Map<String, dynamic> prediction = await _uploadLocation();
+    if (prediction == null) {
+      Toast.show("Location Upload Failed!!!", context,
+          duration: Toast.LENGTH_LONG, gravity: Toast.BOTTOM);
+    } else if (prediction.containsKey('result')) {
+      List<String> height = [];
+      height.add(prediction['result'][0]['1'].toString());
+      height.add(prediction['result'][0]['2'].toString());
+      height.add(prediction['result'][0]['3'].toString());
+      height.add(prediction['result'][0]['4'].toString());
+      height.add(prediction['result'][0]['5'].toString());
+      height.add(prediction['result'][0]['6'].toString());
+      height.add(prediction['result'][0]['7'].toString());
+      height.add(prediction['result'][0]['8'].toString());
+      height.add(prediction['result'][0]['9'].toString());
+      height.add(prediction['result'][0]['10'].toString());
+      height.add(prediction['result'][0]['11'].toString());
+      height.add(prediction['result'][0]['12'].toString());
+      height.add(prediction['result'][0]['13'].toString());
+      height.add(prediction['result'][0]['14'].toString());
+      height.add(prediction['result'][0]['15'].toString());
+      height.add(prediction['result'][0]['16'].toString());
+      height.add(prediction['result'][0]['17'].toString());
+      height.add(prediction['result'][0]['18'].toString());
+      height.add(prediction['result'][0]['19'].toString());
+      height.add(prediction['result'][0]['20'].toString());
+      height.add(prediction['result'][0]['21'].toString());
+      height.add(prediction['result'][0]['22'].toString());
+      height.add(prediction['result'][0]['23'].toString());
+      height.add(prediction['result'][0]['24'].toString());
+      return height;
+    } else {
+      Toast.show("Try again!!!", context,
+          duration: Toast.LENGTH_LONG, gravity: Toast.BOTTOM);
+      return null;
     }
   }
 
@@ -116,61 +113,59 @@ class _ResultState extends State<Result> {
           child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
-          children:<Widget>[CircularProgressIndicator(
-            valueColor: new AlwaysStoppedAnimation<Color>(
-                Colors.grey),
-          ),])
-        );
-      }else if (!_isUploading && height==null){
-        page=Container(
-            margin: EdgeInsets.only(top:10.0),
-            child:Text("System is busy. Please wait...")
-        );
-      }else{
-        page=Container(
-            margin: EdgeInsets.only(top:10.0),
-            child: ListView(
-            children: <Widget>[
-              new Card(
-                child: new Container(
-                  padding: new EdgeInsets.all(32.0),
-                  child: new Column(
-                    children: <Widget>[
-                      Text(
-                        "Expected flood height ",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18,
-                        ),
+              children: <Widget>[
+                CircularProgressIndicator(
+                  valueColor: new AlwaysStoppedAnimation<Color>(Colors.grey),
+                ),
+              ]));
+    } else if (!_isUploading && height == null) {
+      page = Container(
+          margin: EdgeInsets.only(top: 10.0),
+          child: Text("System is busy. Please wait..."));
+    } else {
+      page = Container(
+        margin: EdgeInsets.only(top: 10.0),
+        child: ListView(
+          children: <Widget>[
+            new Card(
+              child: new Container(
+                padding: new EdgeInsets.all(32.0),
+                child: new Column(
+                  children: <Widget>[
+                    Text(
+                      "Expected flood height ",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
                       ),
-                      Text(
-                        "12:00 a.m",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18,
-                        ),
+                    ),
+                    Text(
+                      "12:00 a.m",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
                       ),
-                      SizedBox(
-                        height: 5,
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Text(
+                      height[0],
+                      style: TextStyle(
+                        color: Colors.grey,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
                       ),
-                      Text(
-                        height[0],
-                        style: TextStyle(
-                          color: Colors.grey,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                        ),
-                      ),
-                      SizedBox(
-                        height: 5,
-                      ),
-                      Text(
-                        this.warningMessage,
-                        textAlign: TextAlign.center,
-                        style: TextStyle(),
-                      )
-                    ],
-                  ),
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Text(
+                      this.warningMessage,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(),
+                    )
+                  ],
                 ),
               ),
             ),
