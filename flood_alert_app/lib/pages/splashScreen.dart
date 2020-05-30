@@ -32,7 +32,7 @@ void initState() {
         /// Loader Animation Widget
         CircularProgressIndicator(
           valueColor: new AlwaysStoppedAnimation<Color>(
-              Colors.indigoAccent),
+              Colors.grey),
         ),
         Padding(
           padding: const EdgeInsets.only(top: 20.0),

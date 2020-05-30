@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:google_map_location_picker/generated/i18n.dart'
     as location_picker;
@@ -38,7 +39,7 @@ class _MyAppState extends State<Map> {
       home: Scaffold(
         appBar: AppBar(
           title: const Text('Pick Location'),
-          backgroundColor: Colors.indigo,
+          backgroundColor: Colors.blueGrey,
         ),
         drawer: DrawerUI(),
         body: Builder(builder: (context) {
@@ -46,12 +47,21 @@ class _MyAppState extends State<Map> {
             margin: const EdgeInsets.all(10.0),
             child: Center(
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
+                  SizedBox(
+                    height: 400.0,
+                    child: Image.asset(
+                      'assets/images/location3.png',
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+
                   Material(
                     elevation: 5.0,
                     borderRadius: BorderRadius.circular(30.0),
-                    color: Colors.indigoAccent,
+                    color: Colors.grey,
                     child: MaterialButton(
                       minWidth: MediaQuery.of(context).size.width,
                       padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
@@ -97,7 +107,7 @@ class _MyAppState extends State<Map> {
         }),
         floatingActionButton: FloatingActionButton(
             child: Icon(Icons.home),
-            backgroundColor: Colors.indigo,
+            backgroundColor: Colors.blueGrey,
             onPressed: () {
               Navigator.push(
                 context,

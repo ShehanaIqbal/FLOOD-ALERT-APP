@@ -10,20 +10,32 @@ class MainMenu extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Select an Option"),
-        backgroundColor: Colors.indigo,
+        backgroundColor: Colors.blueGrey,
       ),
       drawer: DrawerUI(),
       body: Center(
+        child:SingleChildScrollView(
         child: Container(
           margin: const EdgeInsets.all(10.0),
           child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
+
+                SizedBox(
+                  height: 155.0,
+                  child: Image.asset(
+                    'assets/images/floodpng.png',
+                    fit: BoxFit.contain,
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 30.0, horizontal: 5.0),
+                ),
                 Material(
                   elevation: 5.0,
                   borderRadius: BorderRadius.circular(30.0),
-                  color: Colors.indigoAccent,
+                  color: Colors.grey,
                   child: MaterialButton(
                     minWidth: MediaQuery.of(context).size.width,
                     padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
@@ -43,12 +55,12 @@ class MainMenu extends StatelessWidget {
                 ),
                 Padding(
                   padding:
-                      EdgeInsets.symmetric(vertical: 50.0, horizontal: 5.0),
+                      EdgeInsets.symmetric(vertical: 20.0, horizontal: 5.0),
                 ),
                 Material(
                   elevation: 5.0,
                   borderRadius: BorderRadius.circular(30.0),
-                  color: Colors.indigoAccent,
+                  color: Colors.grey,
                   child: MaterialButton(
                     minWidth: MediaQuery.of(context).size.width,
                     padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
@@ -63,12 +75,12 @@ class MainMenu extends StatelessWidget {
                 ),
                 Padding(
                   padding:
-                      EdgeInsets.symmetric(vertical: 50.0, horizontal: 5.0),
+                      EdgeInsets.symmetric(vertical: 20.0, horizontal: 5.0),
                 ),
                 Material(
                   elevation: 5.0,
                   borderRadius: BorderRadius.circular(30.0),
-                  color: Colors.indigoAccent,
+                  color: Colors.grey,
                   child: MaterialButton(
                     minWidth: MediaQuery.of(context).size.width,
                     padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
@@ -88,10 +100,11 @@ class MainMenu extends StatelessWidget {
                 ),
               ]),
         ),
+        ),
       ),
       floatingActionButton: FloatingActionButton(
           child: Icon(Icons.home),
-          backgroundColor: Colors.indigo,
+          backgroundColor: Colors.blueGrey,
           onPressed: () {
             Navigator.push(
               context,

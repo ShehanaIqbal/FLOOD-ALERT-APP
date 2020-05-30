@@ -7,20 +7,13 @@ class DrawerUI extends StatelessWidget {
     return Drawer(
     child: ListView(
       children: <Widget>[
-        UserAccountsDrawerHeader(
-          accountName: Text("User usename"),
-          accountEmail: Text("username@gmail.com"),
-            currentAccountPicture: CircleAvatar(
-              backgroundColor:
-              Theme.of(context).platform == TargetPlatform.iOS
-                  ? Colors.blue
-                  : Colors.white,
-            child: Text(
-              "U",
-              style: TextStyle(fontSize: 40.0),
-            ),
+        SizedBox(
+          height: 155.0,
+          child: Image.asset(
+            'assets/images/irrigation.png',
+            fit: BoxFit.contain,
+          ),
         ),
-      ),
       Padding(padding:EdgeInsets.symmetric(vertical: 15.0,horizontal: 5.0) ,),
       ListTile(
         title: Text("Main Menu"),

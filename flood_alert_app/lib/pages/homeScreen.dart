@@ -11,21 +11,28 @@ class _MyHomePageState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        resizeToAvoidBottomPadding: false,
         appBar: AppBar(
           title: Text("Flood Alert Warning Application"),
-          backgroundColor: Colors.indigo,
+          backgroundColor: Colors.blueGrey,
         ),
         drawer: DrawerUI(),
         body: SafeArea(
           child: Center(
+              child:SingleChildScrollView(
               child: Column(
             children: <Widget>[
-              Image.asset(
-                'assets/images/logo.jpg',
-                width: 600.0,
-                height: 240.0,
-                fit: BoxFit.cover,
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 30.0, horizontal: 5.0),
               ),
+              SizedBox(
+                height: 155.0,
+                child: Image.asset(
+                  'assets/images/irrigation.png',
+                  fit: BoxFit.contain,
+                ),
+              ),
+
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 30.0, horizontal: 5.0),
               ),
@@ -45,7 +52,7 @@ class _MyHomePageState extends State<HomeScreen> {
               ),
               FloatingActionButton(
                   child: Icon(Icons.navigate_next),
-                  backgroundColor: Colors.indigo,
+                  backgroundColor: Colors.blueGrey,
                   onPressed: () {
                     Navigator.push(
                       context,
@@ -53,7 +60,7 @@ class _MyHomePageState extends State<HomeScreen> {
                     );
                   }),
               Padding(
-                padding: EdgeInsets.symmetric(vertical: 100.0, horizontal: 5.0),
+                padding: EdgeInsets.symmetric(vertical: 40.0, horizontal: 5.0),
               ),
               Text("Copyright : This application"),
               Text(
@@ -61,7 +68,7 @@ class _MyHomePageState extends State<HomeScreen> {
               ),
               Text("")
             ],
-          )),
+          ))),
         ));
   }
 }
