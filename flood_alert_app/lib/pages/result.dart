@@ -73,10 +73,6 @@ class _ResultState extends State<Result> {
       if (prediction==null){
         Toast.show("Location Upload Failed!!!", context,
             duration: Toast.LENGTH_LONG, gravity: Toast.BOTTOM);
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => HomeScreen()),
-        );
       }else if (prediction.containsKey('result')){
         List<String> height=[];
         height.add(prediction['result'][0]['1'].toString());
@@ -125,7 +121,7 @@ class _ResultState extends State<Result> {
                 Colors.grey),
           ),])
         );
-      }else if (!_isUploading && longitude!=null && latitude!=null){
+      }else if (!_isUploading && height==null){
         page=Container(
             margin: EdgeInsets.only(top:10.0),
             child:Text("System is busy. Please wait...")
