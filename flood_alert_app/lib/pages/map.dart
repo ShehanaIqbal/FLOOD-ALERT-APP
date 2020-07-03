@@ -44,8 +44,12 @@ class _MyAppState extends State<Map> {
         drawer: DrawerUI(),
         body: Builder(builder: (context) {
           return Container(
-            margin: const EdgeInsets.all(10.0),
-            child: Center(
+            decoration: BoxDecoration(
+              color: Colors.blueGrey[100],
+            ),
+            child:Container(
+              margin: const EdgeInsets.all(10.0),
+              child: Center(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -61,8 +65,9 @@ class _MyAppState extends State<Map> {
                   Material(
                     elevation: 5.0,
                     borderRadius: BorderRadius.circular(30.0),
-                    color: Colors.grey,
+                    color: Colors.grey[600],
                     child: MaterialButton(
+
                       minWidth: MediaQuery.of(context).size.width,
                       padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
                       onPressed: () async {
@@ -102,7 +107,7 @@ class _MyAppState extends State<Map> {
                   // Text(_pickedLocation.toString()),
                 ],
               ),
-            ),
+            ),),
           );
         }),
         floatingActionButton: FloatingActionButton(

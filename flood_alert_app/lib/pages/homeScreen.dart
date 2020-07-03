@@ -14,10 +14,14 @@ class _MyHomePageState extends State<HomeScreen> {
         resizeToAvoidBottomPadding: false,
         appBar: AppBar(
           title: Text("Flood Alert Warning Application"),
-          backgroundColor: Colors.blueGrey,
+          backgroundColor: Colors.blueGrey[600],
         ),
         drawer: DrawerUI(),
         body: SafeArea(
+          child:Container(
+            decoration: BoxDecoration(
+              color: Colors.blueGrey[100],
+            ),
           child: Center(
               child:SingleChildScrollView(
               child: Column(
@@ -52,7 +56,7 @@ class _MyHomePageState extends State<HomeScreen> {
               ),
               FloatingActionButton(
                   child: Icon(Icons.navigate_next),
-                  backgroundColor: Colors.blueGrey,
+                  backgroundColor: Colors.blueGrey[600],
                   onPressed: () {
                     Navigator.push(
                       context,
@@ -69,6 +73,6 @@ class _MyHomePageState extends State<HomeScreen> {
               Text("")
             ],
           ))),
-        ));
+        )));
   }
 }

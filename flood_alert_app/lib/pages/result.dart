@@ -36,7 +36,7 @@ class _ResultState extends State<Result> {
   }
 
   String getURL() {
-    String url = 'http://ec2-100-25-180-74.compute-1.amazonaws.com:3000/api/prediction/' +
+    String url = 'http://192.168.43.48:3000/api/prediction/' +
         getLatitude() + '&' +
         getLongitude();
     return url;
@@ -99,10 +99,12 @@ class _ResultState extends State<Result> {
         height.add(prediction['result'][0]['22'].toString());
         height.add(prediction['result'][0]['23'].toString());
         height.add(prediction['result'][0]['24'].toString());
+        print(prediction['result'][0].toString());
         return height;
       }else{
         Toast.show("Try again!!!", context,
             duration: Toast.LENGTH_LONG, gravity: Toast.BOTTOM);
+        print("nothing");
         return null;
       }
     }
@@ -112,14 +114,17 @@ class _ResultState extends State<Result> {
       List<String> height=await _startUploading();
       if (_isUploading){
         page=Container(
-          margin: EdgeInsets.only(top:10.0),
-          child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-          children:<Widget>[CircularProgressIndicator(
-            valueColor: new AlwaysStoppedAnimation<Color>(
-                Colors.grey),
-          ),])
+          child:Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              CircularProgressIndicator(
+                valueColor: new AlwaysStoppedAnimation<Color>(
+                    Colors.grey),
+
+              )
+            ]
+        )
         );
       }else if (!_isUploading && height==null){
         page=Container(

@@ -3,6 +3,7 @@ import 'package:flood_alert_app/pages/homeScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flood_alert_app/pages/map.dart';
 import 'package:flood_alert_app/widgets/drawer.dart';
+import 'package:toast/toast.dart';
 
 class MainMenu extends StatelessWidget {
   @override
@@ -10,12 +11,18 @@ class MainMenu extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Select an Option"),
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Colors.blueGrey[600],
       ),
       drawer: DrawerUI(),
-      body: Center(
+      body: Container(
+    decoration: BoxDecoration(
+    color: Colors.blueGrey[100],
+    ),child:Center(
         child:SingleChildScrollView(
         child: Container(
+          decoration: BoxDecoration(
+            color: Colors.blueGrey[100],
+          ),
           margin: const EdgeInsets.all(10.0),
           child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -35,7 +42,7 @@ class MainMenu extends StatelessWidget {
                 Material(
                   elevation: 5.0,
                   borderRadius: BorderRadius.circular(30.0),
-                  color: Colors.grey,
+                  color: Colors.grey[700],
                   child: MaterialButton(
                     minWidth: MediaQuery.of(context).size.width,
                     padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
@@ -60,11 +67,14 @@ class MainMenu extends StatelessWidget {
                 Material(
                   elevation: 5.0,
                   borderRadius: BorderRadius.circular(30.0),
-                  color: Colors.grey,
+                  color: Colors.grey[600],
                   child: MaterialButton(
                     minWidth: MediaQuery.of(context).size.width,
                     padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-                    onPressed: () {},
+                    onPressed: () {
+                      Toast.show("This feature will be available soon", context,
+                          duration: Toast.LENGTH_LONG, gravity: Toast.BOTTOM);
+                    },
                     child: Text("Rainfall in past 24 hours",
                         textAlign: TextAlign.center,
                         style: TextStyle(
@@ -85,10 +95,8 @@ class MainMenu extends StatelessWidget {
                     minWidth: MediaQuery.of(context).size.width,
                     padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => BasinMenu()),
-                      );
+                      Toast.show("This feature will be available soon", context,
+                          duration: Toast.LENGTH_LONG, gravity: Toast.BOTTOM);
                     },
                     child: Text("Real time water level in guaging stations",
                         textAlign: TextAlign.center,
@@ -100,11 +108,11 @@ class MainMenu extends StatelessWidget {
                 ),
               ]),
         ),
-        ),
+        ),),
       ),
       floatingActionButton: FloatingActionButton(
           child: Icon(Icons.home),
-          backgroundColor: Colors.blueGrey,
+          backgroundColor: Colors.blueGrey[600],
           onPressed: () {
             Navigator.push(
               context,

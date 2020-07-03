@@ -1,3 +1,4 @@
+import 'package:flood_alert_app/pages/instructions.dart';
 import 'package:flood_alert_app/pages/main_menu.dart';
 import 'package:flutter/material.dart';
 
@@ -7,12 +8,17 @@ class DrawerUI extends StatelessWidget {
     return Drawer(
     child: ListView(
       children: <Widget>[
-        SizedBox(
+        Container(
+    decoration: BoxDecoration(
+      color: Colors.blueGrey[100],
+    ),
+        child:SizedBox(
           height: 155.0,
           child: Image.asset(
             'assets/images/irrigation.png',
             fit: BoxFit.contain,
           ),
+        ),
         ),
       Padding(padding:EdgeInsets.symmetric(vertical: 15.0,horizontal: 5.0) ,),
       ListTile(
@@ -28,6 +34,12 @@ class DrawerUI extends StatelessWidget {
       ListTile(
         title: Text("Instructions"),
         trailing: Icon(Icons.info),
+        onTap:() {
+      Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => Instructions())
+      );
+        },
       ),
       ListTile(
         title: Text("My Location"),
