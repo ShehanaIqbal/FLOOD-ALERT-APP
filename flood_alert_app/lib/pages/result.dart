@@ -22,7 +22,7 @@ class _ResultState extends State<Result> {
   double latitude;
   List<String> height;
   String url;
-  final warningMessage="no content";
+  final warningMessage="No risk";
 
 
   _ResultState(this.latitude, this.longitude);
