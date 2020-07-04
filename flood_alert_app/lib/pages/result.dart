@@ -2,8 +2,8 @@ import 'package:flood_alert_app/widgets/drawer.dart';
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:toast/toast.dart';
+import 'package:flood_alert_app/pages/map.dart';
 import 'package:http/http.dart' as http;
-
 import 'homeScreen.dart';
 
 class Result extends StatefulWidget {
@@ -36,7 +36,7 @@ class _ResultState extends State<Result> {
   }
 
   String getURL() {
-    String url = 'http://192.168.43.48:3000/api/prediction/' +
+    String url = 'http://192.168.8.108:3000/api/prediction/' +
         getLatitude() + '&' +
         getLongitude();
     return url;
@@ -45,8 +45,8 @@ class _ResultState extends State<Result> {
   void _resetState() {
     setState(() {
       _isUploading = false;
-      latitude=null;
-      longitude=null;
+//      latitude=null;
+//      longitude=null;
     });
   }
 
@@ -71,8 +71,9 @@ class _ResultState extends State<Result> {
     Future<List<String>> _startUploading() async{
       final Map<String, dynamic> prediction = await _uploadLocation();
       if (prediction==null){
-        Toast.show("Location Upload Failed!!!", context,
+        Toast.show("Location is invalid !!!", context,
             duration: Toast.LENGTH_LONG, gravity: Toast.BOTTOM);
+        return null;
       }else if (prediction.containsKey('result')){
         List<String> height=[];
         height.add(prediction['result'][0]['1'].toString());
@@ -114,17 +115,45 @@ class _ResultState extends State<Result> {
       List<String> height=await _startUploading();
       if (_isUploading){
         page=Container(
+          decoration: BoxDecoration(
+            color: Colors.blueGrey[100],
+          ),child:Center(
+          child:SingleChildScrollView(
+          child: Container(
+          decoration: BoxDecoration(
+        color: Colors.blueGrey[100],
+        ),
+      margin: const EdgeInsets.all(10.0),
           child:Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              CircularProgressIndicator(
-                valueColor: new AlwaysStoppedAnimation<Color>(
-                    Colors.grey),
-
+              Material(
+                elevation: 5.0,
+                borderRadius: BorderRadius.circular(30.0),
+                color: Colors.grey[700],
+                child: MaterialButton(
+                  minWidth: MediaQuery.of(context).size.width,
+                  padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => MapClass()),
+                    );
+                  },
+                  child: Text("Retry",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 15.0,
+                      )),
+                ),
               )
             ]
         )
+      ),
+          ),
+        ),
         );
       }else if (!_isUploading && height==null){
         page=Container(
@@ -1167,17 +1196,18 @@ class _ResultState extends State<Result> {
               return snapshot.data;
             } else {
               return Container(
+                  child:Center(
                   child:Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         CircularProgressIndicator(
                         valueColor: new AlwaysStoppedAnimation<Color>(
-                        Colors.grey),
+                        Colors.grey)
+              ),
 
-              )
             ]
-                  )
+                  )     )
               );
             }
           }

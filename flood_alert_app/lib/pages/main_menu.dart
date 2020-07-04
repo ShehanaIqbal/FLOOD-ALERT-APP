@@ -49,7 +49,7 @@ class MainMenu extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Map()),
+                        MaterialPageRoute(builder: (context) => MapClass()),
                       );
                     },
                     child: Text("Flood Prediction in my area",

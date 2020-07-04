@@ -10,12 +10,12 @@ import 'package:flood_alert_app/pages/homeScreen.dart';
 import 'package:flood_alert_app/pages/result.dart';
 import '../generated/i18n.dart';
 
-class Map extends StatefulWidget {
+class MapClass extends StatefulWidget {
   @override
   _MyAppState createState() => _MyAppState();
 }
 
-class _MyAppState extends State<Map> {
+class _MyAppState extends State<MapClass> {
   // LocationResult _pickedLocation;
 
   @override
