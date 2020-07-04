@@ -2,6 +2,7 @@ import 'package:flood_alert_app/widgets/drawer.dart';
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:toast/toast.dart';
+import 'package:flood_alert_app/pages/homeScreen.dart';
 import 'package:flood_alert_app/pages/map.dart';
 import 'package:http/http.dart' as http;
 import 'homeScreen.dart';
@@ -131,7 +132,7 @@ class _ResultState extends State<Result> {
               Material(
                 elevation: 5.0,
                 borderRadius: BorderRadius.circular(30.0),
-                color: Colors.grey[700],
+                color: Colors.grey[600],
                 child: MaterialButton(
                   minWidth: MediaQuery.of(context).size.width,
                   padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
@@ -142,6 +143,31 @@ class _ResultState extends State<Result> {
                     );
                   },
                   child: Text("Retry",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 15.0,
+                      )),
+                ),
+              ),
+              Padding(
+                padding:
+                EdgeInsets.symmetric(vertical: 20.0, horizontal: 5.0),
+              ),
+              Material(
+                elevation: 5.0,
+                borderRadius: BorderRadius.circular(30.0),
+                color: Colors.grey[700],
+                child: MaterialButton(
+                  minWidth: MediaQuery.of(context).size.width,
+                  padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => HomeScreen()),
+                    );
+                  },
+                  child: Text("Home",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Colors.white,
